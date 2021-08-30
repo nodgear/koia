@@ -1,4 +1,5 @@
 lib/
 .github/
 .taterurc
+.prettierrc
 tsconfig.json

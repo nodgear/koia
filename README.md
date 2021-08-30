@@ -66,5 +66,5 @@ const client = new Client({
   prefix: '!'
 });
 
-client.connect();
+client.login("YOUR TOKEN PREFIX");
 ```

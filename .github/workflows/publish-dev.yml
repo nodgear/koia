@@ -1,0 +1,32 @@
+name: Publish (Development)
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  npm:
+    name: NPM Deployment
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install Node v16
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+          registry-url: https://registry.npmjs.org/
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Transpile Code
+        run: npm run build
+
+      - name: Publish
+        run: |
+          npm version --git-tag-version=false $(jq --raw-output '.version' package.json)-$(git rev-parse --short HEAD)
+          npm publish --tag next || true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}

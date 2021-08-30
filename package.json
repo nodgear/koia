@@ -1,0 +1,31 @@
+{
+  "name": "koia",
+  "version": "0.0.1",
+  "description": "A slash command framework.",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axisiscool/koia.git"
+  },
+  "scripts": {
+    "build": "run-s build:*",
+    "build:code": "tateru",
+    "build:types": "tsc -d --declarationDir dist --emitDeclarationOnly",
+    "build:esm": "gen-esm-wrapper dist/index.js dist/index.mjs"
+  },
+  "author": "Axis (axis@axis.ovh)",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/axisiscool/koia#readme",
+  "dependencies": {
+    "discord.js": "^13.1.0",
+    "lexure": "^0.17.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.7.8",
+    "gen-esm-wrapper": "^1.1.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.3.2",
+    "tateru": "^0.0.9",
+    "typescript": "^4.4.2"
+  }
+}

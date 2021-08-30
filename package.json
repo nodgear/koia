@@ -7,6 +7,13 @@
     "type": "git",
     "url": "git+https://github.com/axisiscool/koia.git"
   },
+  "keywords": [
+    "slash commands",
+    "interactions",
+    "discord.js",
+    "command framework",
+    "commands"
+  ],
   "scripts": {
     "build": "run-s build:*",
     "build:code": "tateru",
@@ -15,7 +22,6 @@
   },
   "author": "Axis (axis@axis.ovh)",
   "license": "Apache-2.0",
-  "homepage": "https://github.com/axisiscool/koia#readme",
   "dependencies": {
     "discord.js": "^13.1.0",
     "lexure": "^0.17.0"
